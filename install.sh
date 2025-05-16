@@ -3,13 +3,13 @@ set -e
 
 echo "\nStarting setup\n"
 
-echo "\n📦 Installing APT packages one by one...\n"
-while read pkg; do
-  if [ -n "$pkg" ] && [ "${pkg#\#}" = "$pkg" ]; then
-    echo "➡️ Installing $pkg..."
-    sudo apt install -y "$pkg" || echo "❌ Failed to install: $pkg"
-  fi
-done < manual-packages.txt
+# echo "\n📦 Installing APT packages one by one...\n"
+# while read pkg; do
+#   if [ -n "$pkg" ] && [ "${pkg#\#}" = "$pkg" ]; then
+#     echo "➡️ Installing $pkg..."
+#     sudo apt install -y "$pkg" || echo "❌ Failed to install: $pkg"
+#   fi
+# done < manual-packages.txt
 
 echo "🔧 Restoring shell configs..."
 cp .bashrc ~/
@@ -81,16 +81,16 @@ if [ -f "enabled-extensions.txt" ]; then
   done < enabled-extensions.txt
 fi
 
-if [ -d "./themes" ]; then
+if [ -d ".themes" ]; then
   echo "\n🎨 Installing GTK themes...\n"
   mkdir -p ~/.themes
-  cp -r themes/* ~/.themes/
+  cp -r .themes/* ~/.themes/
 fi
 
-if [ -d "./icons" ]; then
+if [ -d ".icons" ]; then
   echo "\n🎨 Installing icon themes...\n"
   mkdir -p ~/.icons
-  cp -r icons/* ~/.icons/
+  cp -r .icons/* ~/.icons/
 fi
 
 
@@ -100,7 +100,6 @@ SHELL_THEME="Everforest-Dark"
 CURSOR_THEME="Afterglow-cursors"
 
 gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com || true
-
 
 gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
 gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME"
