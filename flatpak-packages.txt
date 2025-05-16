@@ -1,0 +1,4 @@
+com.getpostman.Postman
+com.mattjakeman.ExtensionManager
+org.gimp.GIMP
+org.gnome.Extensions
