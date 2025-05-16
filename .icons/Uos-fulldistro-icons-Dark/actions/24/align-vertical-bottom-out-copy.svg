@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="24px"
+   height="24px"
+   viewBox="0 0 24 24"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="align-vertical-bottom-out-copy.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="26.291667"
+     inkscape:cx="12"
+     inkscape:cy="11.980983"
+     inkscape:window-width="1920"
+     inkscape:window-height="1000"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title2">align-vertical-bottom-out copy</title>
+  <desc
+     id="desc4">Created with Sketch.</desc>
+  <defs
+     id="defs6" />
+  <g
+     id="align-vertical-bottom-out-copy"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <g
+       id="163"
+       transform="translate(12.fafafa, 12.fafafa) scale(-1, 1) rotate(-90.fafafa) translate(-12.fafafa, -12.fafafa) translate(5.fafafa, 4.fafafa)"
+       fill="#fafafa"
+       fill-rule="nonzero">
+      <polygon
+         id="Path"
+         points="0 0 0 2 2 2 2 0"
+         style="fill:#fafafa;fill-opacity:1" />
+      <path
+         d="M2,2 L3,2 L3,3 L14,3 L14,7 L3,7 L3,11 L14,11 L14,15 L3,15 L3,16 L2,16 L2,2 Z M3,4 L3,6 L13,6 L13,4 L3,4 Z M3,12 L3,14 L13,14 L13,12 L3,12 Z"
+         id="Combined-Shape"
+         style="fill:#fafafa;fill-opacity:1" />
+    </g>
+  </g>
+  <metadata
+     id="metadata831">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>align-vertical-bottom-out copy</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

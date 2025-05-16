@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="22px"
+   height="22px"
+   viewBox="0 0 22 22"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="window-close.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="28.681818"
+     inkscape:cx="11"
+     inkscape:cy="10.982567"
+     inkscape:window-width="1920"
+     inkscape:window-height="1000"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title2">window-close</title>
+  <desc
+     id="desc4">Created with Sketch.</desc>
+  <defs
+     id="defs6" />
+  <g
+     id="Page-1"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <g
+       id="window-close"
+       stroke="#fafafa"
+       stroke-width="1.2">
+      <path
+         d="M17.5,4.5 L4.5,17.5 L17.5,4.5 Z"
+         id="Path-8"
+         style="stroke:#fafafa;stroke-opacity:1" />
+      <path
+         d="M4.5,4.5 L17.5,17.5 L4.5,4.5 Z"
+         id="Path-7"
+         style="stroke:#fafafa;stroke-opacity:1" />
+    </g>
+  </g>
+  <metadata
+     id="metadata831">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>window-close</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

@@ -114,6 +114,7 @@ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 export PATH=$JAVA_HOME/bin:$PATH
 
 export PATH=$PATH:/usr/local/go/bin
+export XDG_DATA_DIRS="${XDG_DATA_DIRS:-/usr/local/share:/usr/share}:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"
 
 # bun completions
 [ -s "/home/calc/.bun/_bun" ] && source "/home/calc/.bun/_bun"

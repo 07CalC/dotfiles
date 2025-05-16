@@ -14,6 +14,7 @@ flatpak
 gcc-mingw-w64
 gedit
 git
+gnome-shell-extensions
 gnome-software-plugin-flatpak
 gnome-tweaks
 gnupg
