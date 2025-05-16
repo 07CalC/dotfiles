@@ -50,7 +50,7 @@ if [ -f "enabled-extensions.txt" ]; then
       echo "📥 Installing extension ID: $id"
       gnome-shell-extension-installer "$id" --yes || echo "❌ Failed: $id"
     fi
-  done < gnome-extensions.txt
+  done < enabled-extensions.txt
 fi
 
 if [ -f "gnome-settings.ini" ]; then
