@@ -35,6 +35,23 @@ if [ -f "snap-packages.txt" ]; then
   done < snap-packages.txt
 fi
 
+echo "\n🔌 Installing GNOME extensions...\n"
+
+if ! command -v gnome-shell-extension-installer &> /dev/null; then
+  echo "⬇️ Downloading gnome-shell-extension-installer..."
+  sudo curl -o /usr/local/bin/gnome-shell-extension-installer \
+    https://raw.githubusercontent.com/brunelli/gnome-shell-extension-installer/master/gnome-shell-extension-installer
+  sudo chmod +x /usr/local/bin/gnome-shell-extension-installer
+fi
+
+if [ -f "enabled-extensions.txt" ]; then
+  while read -r id; do
+    if [[ "$id" =~ ^[0-9]+ ]]; then
+      echo "📥 Installing extension ID: $id"
+      gnome-shell-extension-installer "$id" --yes || echo "❌ Failed: $id"
+    fi
+  done < gnome-extensions.txt
+fi
 
 if [ -f "gnome-settings.ini" ]; then
   echo "🎨 Restoring GNOME settings..."
