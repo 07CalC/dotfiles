@@ -3,13 +3,13 @@ set -e
 
 echo "\nStarting setup\n"
 
-echo "\n📦 Installing APT packages one by one...\n"
-while read pkg; do
-  if [ -n "$pkg" ] && [ "${pkg#\#}" = "$pkg" ]; then
-    echo "➡️ Installing $pkg..."
-    sudo apt install -y "$pkg" || echo "❌ Failed to install: $pkg"
-  fi
-done < manual-packages.txt
+# echo "\n📦 Installing APT packages one by one...\n"
+# while read pkg; do
+#   if [ -n "$pkg" ] && [ "${pkg#\#}" = "$pkg" ]; then
+#     echo "➡️ Installing $pkg..."
+#     sudo apt install -y "$pkg" || echo "❌ Failed to install: $pkg"
+#   fi
+# done < manual-packages.txt
 
 echo "🔧 Restoring shell configs..."
 cp .bashrc ~/
@@ -44,14 +44,46 @@ if ! command -v gnome-shell-extension-installer &> /dev/null; then
   sudo chmod +x /usr/local/bin/gnome-shell-extension-installer
 fi
 
-if [ -f "enabled-extensions.txt" ]; then
-  while read -r id; do
-    if [[ "$id" =~ ^[0-9]+ ]]; then
-      echo "📥 Installing extension ID: $id"
-      gnome-shell-extension-installer "$id" --yes || echo "❌ Failed: $id"
-    fi
-  done < enabled-extensions.txt
-fi
+GNOME_VERSION=$(gnome-shell --version | awk '{print $3}' | cut -d. -f1-2)
+EXTENSION_LIST="enabled-extensions.txt"
+
+echo "🧩 GNOME Version: $GNOME_VERSION"
+echo "📄 Reading UUIDs from: $EXTENSION_LIST"
+echo
+
+while read -r UUID; do
+  [ -z "$UUID" || "$UUID" == \#* ] && continue
+
+  echo "🔍 Processing UUID: $UUID"
+
+  RESPONSE=$(curl -sL "https://extensions.gnome.org/extension-info/?uuid=${UUID}&shell_version=${GNOME_VERSION}")
+
+  # Validate JSON
+  if ! echo "$RESPONSE" | jq . >/dev/null 2>&1; then
+    echo "⚠️ Invalid or no response for $UUID"
+    continue
+  fi
+
+  EXT_ID=$(echo "$RESPONSE" | jq -r '.pk // empty')
+
+  if [ -z "$EXT_ID" || "$EXT_ID" == "null" ]; then
+    echo "⚠️ No extension ID found for $UUID. May be preinstalled or unsupported."
+    echo "➡️ Enabling manually if possible..."
+    gnome-extensions enable "$UUID" 2>/dev/null || echo "❌ Could not enable $UUID"
+    continue
+  fi
+
+  echo "📥 Installing extension: $UUID (ID: $EXT_ID)"
+  if gnome-shell-extension-installer "$EXT_ID" --yes; then
+    echo "✅ Installed $UUID"
+    gnome-extensions enable "$UUID" || echo "⚠️ Failed to enable $UUID"
+  else
+    echo "❌ Failed to install $UUID (ID: $EXT_ID)"
+  fi
+
+  echo
+done < "$EXTENSION_LIST"
+
 
 if [ -f "gnome-settings.ini" ]; then
   echo "🎨 Restoring GNOME settings..."
